@@ -126,7 +126,7 @@ class StateEmbedding(gym.ObservationWrapper):
                    device = "cpu"
             embedding_dim = 2048
             # model = torch.nn.DataParallel(model)
-            checkpoint =  torch.load('/home/mscsim/Yixiao/r3m88-2.pth', map_location=torch.device(device))#for original model /home/mscsim/.r3m/original_r3m/model.pt
+            checkpoint =  torch.load('/home/mscsim/Yixiao/r3m88.pth', map_location=torch.device(device))#for original model /home/mscsim/.r3m/original_r3m/model.pt
             #checkpoint = checkpoint['r3m']#for original model
             checkpoint=remove_language_head(checkpoint)
             checkpoint=state_dict_data_parallel_fix2(checkpoint, model.state_dict()) #for our model
